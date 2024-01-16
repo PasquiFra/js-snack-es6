@@ -81,3 +81,35 @@ console.table(bestStuds)
 const bestStudsOver120 = bestStuds.filter(({id}) => id > 120);
 
 console.table(bestStudsOver120)
+
+// stampo le targhe con il nome degli studenti in maiuscolo
+
+    // TODO: imposto la funzione che mi permettere di trasformare la stringa in maiuscolo
+    
+    // dichiaro la funzione
+
+    function capitalizeText (text) {
+        let capitalizedWords = [];
+        const words = text.split(" ");
+    
+        for (let word of words) {
+            const capitalizedWord = word.toUpperCase();
+            capitalizedWords.push(capitalizedWord);
+        }
+        return capitalizedWords.join(" ")
+    }
+
+    // Eseguo la funzione di MAP con all'interno la funzione capitalizeText
+    const studentsTag = students.map(({name}) => {
+
+        const capitalizedText = capitalizeText (name);
+
+        return capitalizedText
+    } )
+
+    console.table(studentsTag)
+
+
+
+
+
