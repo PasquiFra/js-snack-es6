@@ -71,7 +71,13 @@ const students = [
     },
 ]
 
+//prendo gli studenti con un voto superiore a 70
 const bestStuds = students.filter(({grades}) => grades > 70);
 
 console.table(bestStuds)
 
+// creo una lista degli studenti con voto maggiore di 70 e id superiore a 120
+
+const bestStudsOver120 = bestStuds.filter(({id}) => id > 120);
+
+console.table(bestStudsOver120)
