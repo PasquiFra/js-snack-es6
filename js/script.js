@@ -1,5 +1,5 @@
-aconsole.log("Tutto funziona (finora)")
-
+console.log("Tutto funziona")
+/*
 //! SNACK 1
 
 const tableName = 'Tavolo Vip';
@@ -29,8 +29,8 @@ const guestsList = guests.map((guest, i) => {
 })
 
 console.table(guestsList)
-
-
+*/
+/*
 //! SNACK 2
 
 const students = [
@@ -86,33 +86,132 @@ console.table(bestStudsOver120)
 
     // TODO: imposto la funzione che mi permettere di trasformare la stringa in maiuscolo
     
-    // dichiaro la funzione
-/*
-    function capitalizeText (text) {
-        let capitalizedWords = [];
-        const words = text.split(" ");
-    
-        for (let word of words) {
-            const capitalizedWord = word.toUpperCase();
-            capitalizedWords.push(capitalizedWord);
-        }
-        return capitalizedWords.join(" ")
-    }
-
-    // Eseguo la funzione di MAP con all'interno la funzione capitalizeText
-    const studentsTag = students.map(({name}) => {
-        
-        const capitalizedText = capitalizeText (name);
-        
-        return capitalizedText
-    } )
-*/
-
     const studentsTag = students.map(({name}) => name.toUpperCase())
 
     console.table(studentsTag)
+*/
+
+//! SNACK 3
+
+const bikes = [
+    {
+        nome : "Vicini",
+        peso: 15,
+    },
+    {
+        nome : "Bianchi",
+        peso: 13,
+    },
+    {
+        nome : "Cipollini",
+        peso: 9,
+    },
+    {
+        nome : "Pantani",
+        peso: 10,
+    },
+    {
+        nome : "Ganna",
+        peso: 7,
+    },
+    {
+        nome : "Ganna 2",
+        peso: 7,
+    },
+    {
+        nome : "Cobra",
+        peso: 14,
+    },
+]
+
+//Determino quanto pesa la bici più leggera
+
+let lightestWeight = 20;
+
+for ( let bike of bikes){ 
+    if (bike.peso <= lightestWeight){
+        lightestWeight = bike.peso;
+    }
+    console.log(lightestWeight);
+}
+
+//stampo in console la/le bici con il peso minore
+const lightestBike = bikes.filter(({peso}) => peso === lightestWeight);
+
+console.log(lightestBike)
 
 
+//! SNACK 4
+
+let footballTeams = [
+    {
+        nome: "Inter", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Leicester", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Reggina", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Rimini", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "DC United", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Leyton Orient", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "PSG", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Galatasaray", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Hayduk Split", 
+        punti: 0, 
+        falliSubiti: 0,
+    },
+    {
+        nome: "Cagliari", 
+        punti: 0, 
+        falliSubiti: 0,
+    }
+]
+
+console.table(footballTeams);
+
+const addValues = footballTeams.forEach((footballTeam) => {
+    
+    const randomPoints = Math.floor(Math.random() * 100) + 1;
+    const randomFauls = Math.floor(Math.random() * 100) + 1;
+    
+    footballTeam.punti = randomPoints;
+    footballTeam.falliSubiti = randomFauls;
+})
+
+console.table(footballTeams);
 
 
+const teamFauls = footballTeams.map(({nome, falliSubiti}) => {
+    return ({nome, falliSubiti})
+})
 
+console.table(teamFauls)
