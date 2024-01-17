@@ -22,7 +22,7 @@ const guestsList = guests.map((guest, i) => {
     let listedGuest = {
         nomeTavolo : tableName,
         nomeOspite : guest,
-        numPosto : `${i + 1}`,
+        numPosto : (i + 1),
     }
 
     return (listedGuest);
